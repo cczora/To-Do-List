@@ -33,46 +33,21 @@ function addItem() {
 		newTask.className = "alert alert-secondary alert-dismissable fade show";
 	}
 	
-	//make a <p> element for the text of newTask and stick it in the alert <div>
-	var newTaskText = document.createElement("p");
-	newTaskText.id = "newTaskText";
-	newTaskText.innerHTML = task + numDays + " " + "<p>day(s)</p>";
-	newTask.appendChild(newTaskText);
-	
-	//make a button element and insert it after the text in the alert <div>
-	var closeButton = document.createElement("button");
-	closeButton.type = "button";
+	//make an <a> element for the close button and insert it in newTask
+	var closeButton = document.createElement("a");
+	closeButton.type = "a";
 	closeButton.className = "close"
 	closeButton.setAttribute("data-dismiss", "alert");
-	closeButton.setAttribute("aria-label", "Close");
+	closeButton.setAttribute("aria-label", "close");
+	closeButton.innerHTML = "&times;";
 	newTask.appendChild(closeButton);
 	
-	//make a <span> element and insert it in the <button> tag
-	var spanElement = document.createElement("span");
-	spanElement.type = "span";
-	spanElement.setAttribute("aria-hidden", "true");
-	spanElement.innerHTML = "&times;";
-	closeButton.appendChild(spanElement);
-
+	//make the inside text of newTask and insert it after the <a> element
+	var newTaskText = task + " <br> " + numDays + " day(s)";
+	newTask.insertAdjacentHTML('beforeend', newTaskText);
+	
 	//add the alert to the page!
-	document.getElementById("alertContainer").appendChild(newTask);
+	document.getElementById("alertRow").appendChild(newTask);
 	
 	return false;
 }
-
-
-
-	//NOTES HERE
-
-
-	//deprecated (for now):
-	
-	//I DON'T NEED TO MAKE newTask A CARD WOOHOO! Switching to the alert class in Bootstrap
-	
-	// make the todo list items as class="d-flex" to get them to float nicely, and .flex-wrap to get them to wrap nicely
-	//use .justify-content-around to fix spacing between
-	//so class="d-flex flex-wrap justify-content-around"
-	//document.getElementById("newTask").className = "d-flex flex-wrap justify-content-around";
-	
-	//also deprecated; couldn't figure out how to put a <div> inside of a <div>:
-	//newTask.appendChild("newTaskInside");
