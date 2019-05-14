@@ -69,8 +69,8 @@
 			<div class="row">
 				<div class="col-8 col-sm-12" style="margin:auto">
 					<div class="form-group">
-						<label for="daysToCompleteInput">Days To Complete</label> 
-						<input type="number" class="form-control" name="daysToComplete" id="daysToComplete" required>
+						<label for="daysToCompleteInput">Deadline Date</label> 
+						<input type="date" value = "2019-05-15" class="form-control" name="daysToComplete" id="daysToComplete" required>
 					</div>
 				</div>
 			</div>
@@ -88,15 +88,9 @@
 		
 		<hr width="80%"/>
 		
-		<!-- make a <container> element for the d.flex newTasks to wrap within-->
-		<div class = "container" id = "alertContainer">
-			<div class = "row">
-				<div class = "col-sm-12" id = "alertRow">
-					<!-- alert items will get put here-->
-				</div>
-			</div>
+		<div class = "container col-sm-12" id = "alertContainer">
+			<!-- alert items will get put here -->
 		</div>
-			<p id="newThing"></p>
 	
 		
 	</body>
